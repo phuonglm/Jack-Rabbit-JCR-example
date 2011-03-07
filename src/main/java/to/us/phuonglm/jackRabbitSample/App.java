@@ -1,28 +1,18 @@
 package to.us.phuonglm.jackRabbitSample;
 
-import java.io.File;
-import java.util.Properties;
+import java.io.IOException;
 
-import javax.jcr.LoginException;
-import javax.jcr.Node;
-import javax.jcr.Repository;
-import javax.jcr.RepositoryException;
-import javax.jcr.Session;
-import javax.jcr.SimpleCredentials;
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
-import org.apache.jackrabbit.core.TransientRepository;
-
-
-
-/**
- * Hello world!
- *
- */
 public class App 
 {
+	private static final Logger logger = LogManager.getLogger(App.class);
+	
     public static void main( String[] args )
     {
-    	Repository repository = new TransientRepository(new File("/home/phuong_lyminh/tmp/jcr"));
+/*    	Repository repository = new TransientRepository(new File("/home/phuonglm/tmp/jcr"));
         try {
         	Session session = repository.login(new SimpleCredentials("phuonglm", new char[0]));
         	try {
@@ -49,6 +39,18 @@ public class App
 		} catch (RepositoryException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}*/
+    	
+    	
+    	BasicConfigurator.configure();
+    	
+    	//JCR Command Line
+    	try {
+			JCRCommandLine commandLine = new JCRCommandLine();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			logger.error(e);
 		}
+    	
     }
 }
