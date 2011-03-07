@@ -1,7 +1,6 @@
 package to.us.phuonglm.jackRabbitSample;
 
 import java.io.IOException;
-
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -42,11 +41,11 @@ public class App
 		}*/
     	
     	
-    	BasicConfigurator.configure();
     	
     	//JCR Command Line
     	try {
 			JCRCommandLine commandLine = new JCRCommandLine();
+			commandLine.startCMD();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			logger.error(e);
