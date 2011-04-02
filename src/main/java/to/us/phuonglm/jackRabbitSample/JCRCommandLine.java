@@ -97,6 +97,7 @@ public class JCRCommandLine {
 				} catch (RepositoryException e) {
 					System.out.println(e.toString());
 				}
+				
 			}
 			
 		} catch (LoginException e) {
